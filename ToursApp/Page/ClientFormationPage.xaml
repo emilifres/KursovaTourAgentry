@@ -1,0 +1,53 @@
+﻿<Page x:Class="ToursApp.ClientFormationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:ToursApp"
+      mc:Ignorable="d" Background="WhiteSmoke" d:DesignWidth="800"
+      Title="Avaizons">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20" VerticalAlignment="Top">
+
+            <!-- Сотрудник -->
+            <TextBlock Text="Сотрудник" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                <TextBlock Text="ФИО сотрудника"/>
+                <TextBox x:Name="EmployeeNameTextBox" Margin="0,0,0,10"/>
+                <TextBlock Text="Должность"/>
+                <TextBox x:Name="EmployeePositionTextBox"/>
+            </StackPanel>
+
+            <!-- Заказчик -->
+            <TextBlock Text="Информация о заказчике" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                <TextBlock Text="ФИО заказчика"/>
+                <TextBox x:Name="ClientNameTextBox" Margin="0,0,0,5"/>
+                <TextBlock Text="Номер телефона"/>
+                <TextBox x:Name="ClientPhoneTextBox" Margin="0,0,0,5"/>
+                <TextBlock Text="Электронная почта"/>
+                <TextBox x:Name="ClientEmailTextBox" Width="740"/>
+            </StackPanel>
+
+            <!-- Тур -->
+            <TextBlock Text="Информация о туре" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                <TextBlock Text="Название тура"/>
+                <TextBox x:Name="TourNameTextBox" Margin="0,0,0,5"/>
+                <TextBlock Text="Количество билетов"/>
+                <TextBox x:Name="TicketsCountTextBox" Margin="0,0,0,5"/>
+                <TextBlock Text="Стоимость"/>
+                <TextBox x:Name="TourCostTextBox" Margin="0,0,0,5"/>
+                <TextBlock Text="Количество ночей"/>
+                <TextBox x:Name="NightsCountTextBox"/>
+            </StackPanel>
+
+            <!-- Кнопки -->
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,20">
+                <Button Content="Сохранить" Width="200" HorizontalAlignment="Left" Margin="0,0,10,0" Background="#FFE8936A" Click="SaveClient_Click"/>
+                <Button Content="Сформировать отчёт" Width="200" HorizontalAlignment="Left" Margin="0,0,10,0" Background="#FFE8936A" Click="CreateReport_Click"/>
+                <Button Content="Отмена" Width="200" HorizontalAlignment="Left" Background="#FFE8936A" Click="Cancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

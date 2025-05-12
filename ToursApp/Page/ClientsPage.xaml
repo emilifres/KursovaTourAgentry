@@ -1,0 +1,25 @@
+﻿<Page x:Class="ToursApp.ClientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToursApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Клиенты">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DGridClients" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="150"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="250"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Grid.Row="1" HorizontalAlignment="Left" Name="BtnAdd" Background="#FFE8936A" Click="BtnAdd_Click" Width="200" Margin="10"/>
+    </Grid>
+</Page>

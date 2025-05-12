@@ -1,0 +1,31 @@
+﻿<Page x:Class="ToursApp.ToursPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="ToursPage">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Таблица туров -->
+        <DataGrid x:Name="ToursDataGrid" AutoGenerateColumns="False" SelectionMode="Single"
+                  CanUserAddRows="False" IsReadOnly="True" Grid.Row="0" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название тура" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Билетов" Binding="{Binding TicketsCount}" Width="60"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="70"/>
+                <DataGridTextColumn Header="Дата начала" Binding="{Binding StartDate, StringFormat=d}" Width="90"/>
+                <DataGridTextColumn Header="Дата окончания" Binding="{Binding EndDate, StringFormat=d}" Width="100"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type.Name}" Width="40"/>
+                <DataGridTextColumn Header="Актуальность" Binding="{Binding IsActual}" Width="85"/>
+                <DataGridTextColumn Header="Отель" Binding="{Binding Hotel.Name}" Width="95"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- Панель кнопок -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+            <Button x:Name="AddButton" Content="Добавить" Width="100" Margin="5" Background="#FFE8936A" Click="AddButton_Click"/>
+            <Button x:Name="DeleteButton" Content="Удалить" Width="100" Margin="5" Background="#FFE8936A" Click="DeleteButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
